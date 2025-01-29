@@ -1,0 +1,114 @@
+body {
+    height: 100%;
+    /* margin: 0;
+    padding: 0; */
+  
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    min-height: 100vh;   
+    width: 100%;
+    background-image: url('../icons/Bg-image.png');
+    background-size: cover;      
+    background-repeat: no-repeat; 
+    background-position: center; 
+    background-color: lightgray;
+    /* margin: 0;                  
+    padding: 0; */
+}
+
+
+/* Logo styling */
+.header {
+    margin: 20px 0;
+}
+
+.headerLogo {
+    height: 75px;
+}
+
+.email-form-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 850px;
+}
+
+/* Email form */
+.email-form {
+    background: #F1F0F0;
+    padding: 30px;
+    border-radius: 12px;
+    width: 950px;
+    height:520px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+.email-form h2 {
+    font-family: Roboto;
+    font-size: 45px;
+    font-weight: 600;
+    line-height: 52.73px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: #000000;
+    text-transform: uppercase;
+}
+
+.email-input {
+    width: 80%;
+    padding: 24px 33px;
+    border-radius: 17px;
+    border-radius: 8px;
+    font-family: Inter;
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 33.89px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: #000000;
+}
+
+.next-button {
+    padding: 24px 54px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: Inter;
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 33.89px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: #000000;    
+    background-color: #EDAA00 !important;
+}
+
+.email-input.error {
+    border: 1px solid red;
+  }
+  
+  .error-message {
+    color: red;
+    font-size: 0.9em;
+    margin-top: 5px;
+  }
+  
+  .next-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+

@@ -1,0 +1,325 @@
+/* General Container Styling */
+.table-container {
+  max-width: 1300px;
+  margin: 20px auto;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #ffffff; /* Add subtle background */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Heading Section */
+.heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+  margin-bottom: 20px; 
+}
+
+.title {
+  font-size: 30px; 
+  font-weight: bold;
+  color: #333; /* Darker color for contrast */
+}
+
+/* Button Section */
+.btn {
+  display: flex; 
+  gap: 15px; /* Space between buttons */
+}
+
+.add-user-button {
+  padding: 12px 20px; 
+  background-color: #4CAF50; 
+  color: white; 
+  font-size: 16px; 
+  font-weight: bold; 
+  border: none; 
+  border-radius: 8px; /* Softer corners */
+  cursor: pointer; 
+  transition: all 0.3s ease; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+.add-user-button:hover {
+  background-color: #45a049; 
+  transform: translateY(-3px); 
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); 
+}
+
+.add-user-button:active {
+  transform: translateY(1px); 
+}
+
+.add-user-button:nth-child(3) {
+  background-color: #f44336; 
+}
+
+.add-user-button:nth-child(3):hover {
+  background-color: #e53935; 
+}
+
+/* Filter Buttons */
+.filter-buttons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 15px 0;
+}
+
+.filter-button {
+  padding: 10px 15px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.filter-button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05); /* Subtle grow on hover */
+}
+
+
+.location-filter{
+  margin-left: 15px;
+}
+
+.date-picker-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.date-picker-container .react-datepicker-wrapper {
+  width: auto;
+}
+
+.react-datepicker__input-container input {
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: all 0.3s;
+}
+
+.react-datepicker__input-container input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.reset-button {
+  background-color: #f0f0f0;
+  color: #333;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s;
+}
+
+.reset-button:hover {
+  background-color: #e0e0e0;
+}
+
+.reset-button svg {
+  margin-right: 8px;
+}
+
+/* Search Bar */
+.search-bar-container {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+.search-bar {
+  padding: 10px 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  font-size: 14px;
+  width: 250px;
+  transition: all 0.3s;
+}
+
+.search-bar:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.search-button {
+  padding: 10px 15px;
+  margin-left: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.search-button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+.filter-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Aligns content to the left */
+  margin: 1rem 0;
+}
+
+/* Table Styling */
+.custom-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px auto;
+  font-family: Arial, sans-serif;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.custom-table th,
+.custom-table td {
+  padding: 15px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+.custom-table th {
+  background-color: #f4f4f4;
+  color: #333;
+  font-weight: bold;
+}
+
+.custom-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.delete-button {
+  padding: 10px 15px;
+  background-color: #ff4d4f;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.delete-button:hover {
+  background-color: #d9363e;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  }
+  
+  .pagination button {
+  padding: 8px 16px;
+  margin: 0 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #f8f9fa;
+  cursor: pointer;
+  font-size: 14px;
+  }
+  
+  .pagination button:hover {
+  background-color: #e2e6ea;
+  }
+  
+  .pagination button:disabled {
+  background-color: #f1f1f1;
+  cursor: not-allowed;
+  }
+  
+  .pagination button.active {
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
+  }
+  
+  .pagination button.active:hover {
+  background-color: #0056b3;
+  }
+
+  .clickable-cell{
+    cursor: pointer;
+  }
+
+  .rows-per-page {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: Roboto;
+    font-size: 18.15px;
+    font-weight: 500;
+    color: #000000;
+  }
+
+  .rows-per-page select {
+    padding: 5px 5px;
+    font-family: Roboto;
+    font-size: 18.15px;
+    font-weight: 500;
+    line-height: 51.99px;
+    text-align: left;
+    color: #000000;
+    border: 1px solid #000000;
+    border-radius: 4px;
+    background-color: transparent;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+
+  .options-modal {
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 10px 0;
+    width: 150px;
+    top: 100%; 
+    right: 0; 
+    z-index: 1000;
+  }
+
+  .options-modal div {
+    padding: 10px 15px;
+    font-family: Roboto;
+    cursor: pointer;
+    font-size: 14px;
+    color: #333;
+    transition: background-color 0.2s ease;
+  }
+  
+  .options-modal div:hover {
+    background-color: #f5f5f5;
+  }
+  
+  .options-modal div:first-child {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+  
+  .options-modal div:last-child {
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+  }
+  
+  

@@ -1,0 +1,421 @@
+/* Container layout */
+.custom-calendar-container {
+    display: flex;
+    height: 100vh;
+  }
+  
+  /* Sidebar styling */
+  .sidebar {
+    width: 20%;
+    background-color: #f2b701;
+    color: white;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Sidebar header */
+  .sidebar-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  
+  .menu-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: white;
+    margin-right: 0.5rem;
+  }
+  
+  /* Date section styling */
+  .date-section {
+    margin-bottom: 1.5rem;
+  }
+  
+  .date-section h4 {
+    margin: 0;
+    /* font-size: 1.2rem; */
+    font-size: 18px;
+  }
+  
+  .date-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
+  }
+  
+  .date-item {
+    text-align: center;
+    padding: 5px;
+    border-radius: 50%;
+  }
+  
+  .selected-date {
+    background-color: black;
+    color: white;
+  }
+  
+  /* Section styling (Appointments & Meetings) */
+  .section {
+    width: 100%;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    padding-top: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .section h4 {
+    font-size: 1rem;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+  }
+  
+  /* Calendar styling */
+  .calendar {
+    flex-grow: 1;
+    padding: 1rem;
+    height: calc(100vh - 2rem);
+  }
+  
+  .calendar .rbc-calendar {
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  
+  /* Set the height for each row in the time grid */
+  .rbc-time-slot {
+    height: 200px; /* Adjust as needed */
+  }
+  
+  /* Optional: Adjust the font size and padding for better readability */
+  .rbc-timeslot-group {
+    font-size: 14px;
+    /* padding: px 0; */
+  }
+  
+  button[type="button"] {
+    background: #000000;
+    color: white;
+    padding: 3px;
+    font-weight: bold;
+  }
+  
+  /* Customize event display within time slots */
+  .rbc-event {
+    font-size: 14px;
+    padding: 5px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .search-section {
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .search-input {
+    width: 80%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  .search-input:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  }
+  
+  .filter-dropdown {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background-color: white;
+    cursor: pointer;
+  }
+  
+  
+  
+  
+  .calendar-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 7px 8px;
+  }
+  
+  .toolbar-left {
+    display: flex;
+    align-items: center;
+  }
+  
+  .toolbar-left button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 35px; /* Increased width for better visibility */
+    height: 35px; /* Matches the width for a perfect circle */
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 0 8px; /* Adjust spacing between arrows */
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Ensures text (arrow) is centered */
+    transition: background-color 0.3s ease;
+  }
+  
+  .toolbar-left button:hover {
+    background-color: #0056b3;
+  }
+  
+  .toolbar-left .toolbar-label {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0 10px;
+    color: #333;
+  }
+  
+  .today-button {
+    padding: 12px 20px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    font-size: 16px; 
+    font-weight: bold; 
+    border: none;
+    border-radius: 5px; 
+    cursor: pointer; 
+    transition: all 0.3s ease; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .today-button:hover {
+    background-color: #0056b3;
+  }
+  
+  
+  
+  
+  
+  
+
+  
+  .toolbar-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .logout-button{
+    padding: 12px 20px; 
+    background-color: #f44336;
+    color: white; 
+    font-size: 16px; 
+    font-weight: bold; 
+    border: none;
+    border-radius: 5px; 
+    cursor: pointer; 
+    transition: all 0.3s ease; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .logout-button:hover{
+    background-color: #e53935; 
+  }
+  
+  .list-view-button {
+    padding: 12px 20px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    font-size: 16px; 
+    font-weight: bold; 
+    border: none;
+    border-radius: 5px; 
+    cursor: pointer; 
+    transition: all 0.3s ease; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .list-view-button:hover {
+    background-color: #0056b3;
+  }
+  
+  
+  
+  .rbc-event-label {
+    display: none;
+  }
+  
+  
+  .rbc-day-slot .rbc-event, .rbc-day-slot .rbc-background-event {
+    border: 1px solid #265985;
+    display: flex;
+    max-height: 100%;
+    min-height: 101px;
+    flex-flow: column wrap;
+    align-items: flex-start;
+    overflow: hidden;
+    position: absolute;
+    z-index: 1;
+  }
+  
+  .rbc-timeslot-group {
+    border-bottom: 1px solid #ddd;
+    min-height: 80px;
+    display: flex;
+    flex-flow: column nowrap;
+  }
+  
+  .custom-event{
+    cursor: pointer;
+      position: relative;
+      z-index: 999;
+      display: flex
+  ;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 10px;
+  }
+  
+  
+  /* Change the color of the current time indicator to red */
+  .rbc-current-time-indicator {  
+    position: absolute;
+    z-index: 3;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background-color: #f80909;
+    pointer-events: none;
+  }
+  
+  .date-item {
+    padding: 5px;
+    text-align: center;
+    cursor: pointer; /* Add pointer cursor */
+    transition: background-color 0.2s ease-in-out;
+  }
+  
+  .date-item:hover {
+    background-color: #eaeaea; /* Highlight on hover */
+    border-radius: 50%; /* Make it round */
+  }
+  
+  .selected-date {
+    background-color: #007bff;
+    color: white;
+    border-radius: 50%;
+  }
+  
+  .month-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .month-navigation button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: #007bff;
+  }
+  
+  .month-navigation button:hover {
+    color: #0056b3; /* Darker blue for hover */
+  }
+  
+
+
+  
+  .names-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .names-list li {
+    margin-bottom: 10px;
+    font-size: 1rem;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .toolbar-middle {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  /* .names-container {
+    display: flex;
+    gap: 10px;
+    flex-wrap: nowrap; 
+  } */
+
+  .names-container {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    padding: 10px;
+    margin: 0;
+  }
+  
+  .selected-name {
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+
+  .selected-name .artistName{
+    cursor: pointer;
+  }
+  
+  .selected-name .cancel-button {
+    margin-left: 10px;
+    cursor: pointer;
+  }
+
+  .selected-artists {
+    font-size: 12px;
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 5px;
+  }
+  
+  
+  
+  /* .selected-name {
+    display: flex;
+    align-items: center;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    padding: 5px 10px;
+    width: 30%; 
+    justify-content: space-between;
+    min-width: 100px; 
+    box-sizing: border-box;
+  } */
+  
+  
+  
+  

@@ -1,0 +1,207 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content-details {
+  background: #f9f9f9;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 600px;
+  max-height: 80vh;
+  overflow-y: auto;
+  padding: 25px 30px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  font-family: 'Arial', sans-serif;
+}
+
+.modal-content-details h3 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: bold;
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 10px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  color: #555;
+  margin-bottom: 8px;
+}
+
+.form-group p {
+  font-size: 16px;
+  color: #333;
+  margin: 0;
+  background: #fff;
+  padding: 10px 15px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+button {
+  padding: 12px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button[type="button"] {
+  background: #f44336;
+  color: white;
+  font-weight: bold;
+}
+
+button[type="button"]:hover {
+  background: #d32f2f;
+}
+
+button[type="submit"] {
+  background: #007bff;
+  color: white;
+  font-weight: bold;
+}
+
+button[type="submit"]:hover {
+  background: #0056b3;
+}
+
+.image-preview img {
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  margin-top: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.scrollable::-webkit-scrollbar {
+  width: 8px;
+}
+
+.scrollable::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 8px;
+}
+
+.scrollable::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 8px;
+}
+
+.scrollable::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.sessions {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Add space between sessions */
+}
+
+.session-details {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.session-details p {
+  margin: 5px 0;
+}
+
+/* .image-and-download{
+  position: relative; 
+} */
+
+.reference-image {
+  max-height: 400px; /* Limit image height */
+  max-width: 100%; /* Ensure the image does not exceed container width */
+  object-fit: contain; /* Make sure image scales nicely without distortion */
+  border-radius: 8px;
+}
+
+
+
+
+.image-and-download {
+  position: relative;
+  display: flex;
+  justify-content: center; /* Center content */
+  align-items: center; /* Center content */
+}
+
+.carousel-slide {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 100%;
+}
+
+/* .download-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: yellow;
+  border: none;
+  border-radius: 50%;
+  z-index: 10;
+  cursor: pointer;
+  padding: 10px;
+} */
+
+
+.download-button {
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  position: absolute; 
+  top: 0px; 
+  right: 10px;
+  width: 40px; 
+  height: 40px; 
+  background-color: rgba(0, 0, 0, 0.7); 
+  color: yellow !important; 
+  border: none;
+  border-radius: 50%; 
+  z-index: 10;
+  cursor: pointer;
+}
+
+
+.download-button:hover {
+  background-color: rgba(0, 0, 0, 0.9);
+} 
+
+.download-button i {
+  color: yellow !important; /* Use !important to ensure it's applied */
+}
+
+
+
+

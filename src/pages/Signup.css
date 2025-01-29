@@ -1,0 +1,212 @@
+body {
+    height: 100%;
+    /* margin: 0;
+    padding: 0; */
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    min-height: 100vh;   
+    width: 100%;
+    background-image: url('../icons/Bg-image.png');
+    background-size: cover;      
+    background-repeat: no-repeat; 
+    background-position: center; 
+    background-color: lightgray;
+    /* margin: 0;                  
+    padding: 0; */
+}
+
+/* Logo styling */
+.header {
+    margin: 20px 0;
+}
+
+.headerLogo {
+    height: 75px;
+}
+
+.signup-form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 850px;
+}
+
+/* SignUp form */
+.signup-form {
+    background: #F1F0F0;
+    padding: 30px;
+    border-radius: 12px;
+    width: 950px;
+    height: 650px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+.signup-form h2 {
+    font-family: Roboto;
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 52.73px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: #000000;
+    text-transform: uppercase;
+}
+
+.input-field {
+    width: 80%;
+    padding: 10px 10px;
+    border-radius: 8px;
+    font-family: Inter;
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 33.89px;
+    text-align: left;
+    color: #000000;
+}
+
+.signup-button {
+    padding: 20px 35px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: Inter;
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 33.89px;
+    text-align: left;
+    color: #000000;    
+    background-color: #EDAA00 !important;
+}
+
+.input-field.error {
+    border: 1px solid red;
+}
+
+.error-message {
+    color: red;
+    font-size: 0.9em;
+    margin-top: 5px;
+}
+
+.signup-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .signup-form {
+        width: 90%;
+        height: auto;
+        padding: 20px;
+    }
+
+    .input-field {
+        font-size: 18px;
+        padding: 16px;
+    }
+
+    .signup-button {
+        font-size: 20px;
+        padding: 16px;
+    }
+}
+
+/* Hover and focus states */
+.input-field:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.signup-button:hover {
+    background-color: #e89f00;
+}
+
+.redirect-paragraph {
+    font-size: 18px;
+    font-family: Inter, sans-serif;
+    margin-top: 20px;
+    color: #000000;
+}
+
+.redirect-link {
+    color: #007bff;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.redirect-link:hover {
+    color: #0056b3;
+    text-decoration: none;
+}
+
+
+.custom-dropdown {
+    width: 82%;
+    padding: 10px 10px;
+    border: 1px solid #ccc; 
+    border-radius: 8px; 
+    font-family: Roboto, sans-serif; 
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 33.89px;
+    color: #000000;
+    background-color: #ffffff;
+    cursor: pointer;
+    /* Positions the dropdown arrow */
+    background-image: linear-gradient(45deg, transparent 50%, #000000 50%),
+                      linear-gradient(135deg, #000000 50%, transparent 50%);
+    background-position: calc(100% - 20px) center, calc(100% - 15px) center;
+    background-size: 5px 5px, 5px 5px;
+    background-repeat: no-repeat;
+    appearance: none; /* Removes default styling */
+}
+
+/* Focus state */
+.custom-dropdown select:focus {
+    border-color: #007bff; /* Matches the input field focus color */
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Hover state */
+.custom-dropdown select:hover {
+    border-color: #e89f00; /* Matches input field hover color */
+}
+
+/* Disabled state */
+.custom-dropdown select:disabled {
+    background-color: #f1f1f1;
+    color: #999999;
+    cursor: not-allowed;
+}
+
+/* Option styling */
+.custom-dropdown option {
+    /* font-family: Inter, sans-serif;
+    font-size: 20px;
+    color: #000000; */
+
+
+    width: 80%;
+    padding: 10px 10px;
+    border-radius: 8px;
+    font-family: Inter;
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 33.89px;
+    text-align: left;
+    color: #000000;
+}
+

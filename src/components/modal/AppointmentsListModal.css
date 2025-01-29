@@ -1,0 +1,77 @@
+/* Overlay to darken the background */
+.appointments-list-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999; /* Ensure it appears above all other elements */
+  }
+  
+  /* Modal container */
+  .appointments-list-modal {
+    background-color: #fff; /* White background for the modal */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    padding: 20px; /* Space inside the modal */
+    width: 90%; /* Adjust width for responsiveness */
+    max-width: 400px; /* Maximum width for larger screens */
+    z-index: 1000; /* Ensure it stays above the overlay */
+  }
+  
+  /* Modal header */
+  .appointments-list-modal h2 {
+    margin: 0 0 16px; /* Spacing below the heading */
+    font-size: 1.5rem; /* Slightly larger font */
+    color: #333; /* Neutral text color */
+  }
+  
+  /* List styles */
+  .appointments-list-modal ul {
+    list-style-type: none; /* Remove bullet points */
+    margin: 0; /* Reset margin */
+    padding: 0; /* Reset padding */
+    max-height: 200px; /* Limit height for scrollable list */
+    overflow-y: auto; /* Enable scrolling if list is long */
+    border: 1px solid #ddd; /* Light border around the list */
+    border-radius: 4px; /* Match the modal's rounded corners */
+  }
+  
+  /* List item styles */
+  .appointments-list-modal li {
+    padding: 10px; /* Space inside each list item */
+    border-bottom: 1px solid #eee; /* Divider between items */
+    cursor: pointer; /* Indicate clickability */
+    color: #007bff; /* Blue text for interactive items */
+    transition: background-color 0.3s, color 0.3s; /* Smooth hover effects */
+  }
+  
+  /* Hover effect for list items */
+  .appointments-list-modal li:hover {
+    background-color: #f8f9fa; /* Light gray hover effect */
+    color: #0056b3; /* Darker blue on hover */
+  }
+  
+  /* Close button styles */
+  .appointments-list-modal button {
+    display: block; /* Center the button */
+    margin: 16px auto 0; /* Space above and below */
+    padding: 10px 20px; /* Button size */
+    background-color: #007bff; /* Blue button */
+    color: #fff; /* White text */
+    border: none; /* No border */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor */
+    font-size: 1rem; /* Font size */
+    transition: background-color 0.3s; /* Smooth hover effect */
+  }
+  
+  /* Hover effect for close button */
+  .appointments-list-modal button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }
+  

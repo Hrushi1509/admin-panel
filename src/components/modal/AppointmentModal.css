@@ -1,0 +1,127 @@
+/* Modal background overlay */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Modal content container */
+.modal-content {
+    background-color: #ffffff; /* White background */
+    border-radius: 8px; /* Rounded corners */
+    width: 90%;
+    max-width: 900px; /* Maximum width for larger screens */
+    max-height: 80vh; /* Set a maximum height (80% of the viewport height) */
+    overflow-y: auto; /* Enable vertical scrolling if content exceeds max-height */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    padding: 20px;
+    animation: fadeIn 0.3s ease-in-out;
+    text-align: center;
+}
+
+/* Modal header */
+.modal-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+/* Table styling */
+.appointments-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 1rem;
+    text-align: left;
+}
+
+.appointments-table th,
+.appointments-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.appointments-table th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+    text-align: center;
+}
+
+.appointments-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.appointments-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Close button */
+.close-button {
+    display: block;
+    width: 100%;
+    background-color: #007bff; /* Blue button */
+    color: #fff;
+    font-size: 1rem;
+    padding: 10px;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+.close-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+.appointments-table td:nth-child(1) {
+    width: 17%; /* Adjust as needed for "Session Date" */
+}
+
+/* Animation for modal fade-in */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+.switch-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.switch-button {
+    padding: 0.5rem 1rem;
+    border: none;
+    background-color: #f0f0f0;
+    cursor: pointer;
+    font-size: 1rem;
+    margin: 0 0.5rem;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.switch-button.active {
+    background-color: #007bff;
+    color: white;
+}
+
+.switch-button:hover:not(.active) {
+    background-color: #e0e0e0;
+}
+
