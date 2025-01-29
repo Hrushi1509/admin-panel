@@ -54,17 +54,29 @@ const CustomCalendar = ({ showTable, setShowTable }) => {
         const fetchedAppointments = response?.data;
 
 
-        const mappedAppointments = fetchedAppointments?.map(user => ({
-          id: user?.user?.id,
-          artist: user?.user?.username,
-          email: user?.user?.email,
-          // appointments: user?.user?.session_count,
-          appointments: user?.session_count,
-          completed_count: user?.completed_count,
-          upcoming_count: user?.upcoming_count,
-          completed_appointments: user?.completed_appointments,
-          upcoming_appointments: user?.upcoming_appointments
-        }));
+        // const mappedAppointments = fetchedAppointments?.map(user => ({
+        //   id: user?.user?.id,
+        //   artist: user?.user?.username,
+        //   email: user?.user?.email,
+        //   // appointments: user?.user?.session_count,
+        //   appointments: user?.session_count,
+        //   completed_count: user?.completed_count,
+        //   upcoming_count: user?.upcoming_count,
+        //   completed_appointments: user?.completed_appointments,
+        //   upcoming_appointments: user?.upcoming_appointments
+        // }));
+
+        const mappedAppointments = [{
+          id: 12,
+          artist: "john",
+          email: "john@gmail.com",
+          appointments: 2,
+          appointments: 2,
+          completed_count: 3,
+          upcoming_count: 2,
+          completed_appointments: [{}],
+          upcoming_appointments: [{}]
+        }];
 
 
 
@@ -77,7 +89,8 @@ const CustomCalendar = ({ showTable, setShowTable }) => {
     };
 
     fetchAppointments();
-  }, [filterOption, id, userId, tokenFromStorage, baseURL]);
+  // }, [filterOption, id, userId, tokenFromStorage, baseURL]);
+  });
 
 
 
@@ -85,7 +98,7 @@ const CustomCalendar = ({ showTable, setShowTable }) => {
     setSelectedEvent(event);
   };
 
-  const EventRenderer = ({event, selectedNames, handleEventClick  }) => {
+  const eventRenderer = ({event, selectedNames, handleEventClick  }) => {
     console.log("Rendering event:", event);
     console.log("Selected Names:", selectedNames);
     return(
@@ -109,10 +122,10 @@ const CustomCalendar = ({ showTable, setShowTable }) => {
       >
     
 
-      {/* Display selected artists' names at the top */}
       {selectedNames && selectedNames.length > 0 && (
         <div className="selected-artists rbc-row">
-          <strong>Selected Artists: {selectedNames.join(", ")}</strong>
+          {/* <strong>Selected Artists: {event.join(", ")}</strong> */}
+          <strong>Selected Artists: {event?.artist}</strong>
         </div>
       )}
 
@@ -207,42 +220,75 @@ const CustomCalendar = ({ showTable, setShowTable }) => {
 
           const response = await axios.get(
             // `${baseURL}/get-upcoming-appointments-by-artist/?id=${id}&status=upcoming`,
-            `${baseURL}/get-upcomming-appointments-by-artist/?id=${selectedArtistId}&status=upcoming`
+            // `${baseURL}/get-upcomming-appointments-by-artist/?id=${selectedArtistId}&status=upcoming`
           );
           const upcomingAppointments = response.data;
 
           // Map the response to the desired structure
-          const mappedUpcomingAppointments = upcomingAppointments?.map(appointment => {
+          // const mappedUpcomingAppointments = upcomingAppointments?.map(appointment => {
+          //   // Flatten sessions to events
+          //   return appointment?.sessions?.map(session => ({
+          //     id: appointment?.id,
+          //     title: appointment?.appointment_title, // Appointment title
+          //     start: moment(`${session?.session_date} ${session?.start_time}`).toDate(),
+          //     end: moment(`${session?.session_date} ${session?.end_time}`).toDate(),
+          //     artist: appointment?.assigned_user?.username, // Assigned artist
+          //     email: appointment?.assigned_user?.email, // Artist email
+          //     user: appointment?.user?.username, // User name
+          //     userEmail: appointment?.user?.email, // User email
+          //     location: appointment?.appointment_location?.name, // Appointment location
+          //     tattooIdea: appointment?.tatto_idea, // Tattoo idea
+          //     appointmentCount: appointment?.appointment_count, // Appointment count
+          //     ghlEmail: appointment?.ghl_user_email, // GHL user email
+          //     hasPreviousTattoos: appointment?.has_previous_tattoos, // Has previous tattoos
+          //     tattooedAtCertifiedStudios: appointment?.tattooed_at_certified_studios, // Tattooed at certified studios
+          //     tattooStyle: appointment?.tattoo_style, // Tattoo style
+          //     tattooBodyPart: appointment?.tattoo_body_part, // Tattoo body part
+          //     tattooSize: appointment?.tattoo_size, // Tattoo size
+          //     colorOrBlackGrey: appointment?.color_or_black_grey, // Tattoo color or black/grey
+          //     coverUpOrRework: appointment?.cover_up_or_rework, // Cover-up or rework
+          //     preferredTattooer: appointment?.preferred_tattooer, // Preferred tattooer
+          //     preferredLocation: appointment?.preferred_location, // Preferred location
+          //     specificDates: appointment?.specific_dates, // Specific dates
+          //     isTraveling: appointment?.is_traveling, // Is traveling
+          //     depositAmount: appointment?.deposite_amount, // Deposit amount
+          //     totalProjectCost: appointment?.total_project_cost, // Total project cost
+          //     sessionNo: session?.session_no, // Session number
+          //   }));
+          // }).flat();
+
+
+          const mappedUpcomingAppointments =
             // Flatten sessions to events
-            return appointment?.sessions?.map(session => ({
-              id: appointment?.id,
-              title: appointment?.appointment_title, // Appointment title
-              start: moment(`${session?.session_date} ${session?.start_time}`).toDate(),
-              end: moment(`${session?.session_date} ${session?.end_time}`).toDate(),
-              artist: appointment?.assigned_user?.username, // Assigned artist
-              email: appointment?.assigned_user?.email, // Artist email
-              user: appointment?.user?.username, // User name
-              userEmail: appointment?.user?.email, // User email
-              location: appointment?.appointment_location?.name, // Appointment location
-              tattooIdea: appointment?.tatto_idea, // Tattoo idea
-              appointmentCount: appointment?.appointment_count, // Appointment count
-              ghlEmail: appointment?.ghl_user_email, // GHL user email
-              hasPreviousTattoos: appointment?.has_previous_tattoos, // Has previous tattoos
-              tattooedAtCertifiedStudios: appointment?.tattooed_at_certified_studios, // Tattooed at certified studios
-              tattooStyle: appointment?.tattoo_style, // Tattoo style
-              tattooBodyPart: appointment?.tattoo_body_part, // Tattoo body part
-              tattooSize: appointment?.tattoo_size, // Tattoo size
-              colorOrBlackGrey: appointment?.color_or_black_grey, // Tattoo color or black/grey
-              coverUpOrRework: appointment?.cover_up_or_rework, // Cover-up or rework
-              preferredTattooer: appointment?.preferred_tattooer, // Preferred tattooer
-              preferredLocation: appointment?.preferred_location, // Preferred location
-              specificDates: appointment?.specific_dates, // Specific dates
-              isTraveling: appointment?.is_traveling, // Is traveling
-              depositAmount: appointment?.deposite_amount, // Deposit amount
-              totalProjectCost: appointment?.total_project_cost, // Total project cost
-              sessionNo: session?.session_no, // Session number
-            }));
-          }).flat(); // Flatten the array of sessions
+                [{
+              id: 12,
+              title: "tatto", // Appointment title
+              start: "12-12-2025",
+              end: "12-12-2025 11:40 PM 12:20 PM",
+              artist: "John", // Assigned artist
+              email: "john@gmail.com",
+              user: "abc", // User name
+              userEmail: "abc@gmail.com", // User email
+              location: "lakdown", // Appointment location
+              tattooIdea: "xyz", // Tattoo idea
+              appointmentCount: 2, // Appointment count
+              ghlEmail: "abc@ghl.com", // GHL user email
+              hasPreviousTattoos: "no", // Has previous tattoos
+              tattooedAtCertifiedStudios: "yes", // Tattooed at certified studios
+              tattooStyle: "normal", // Tattoo style
+              tattooBodyPart: "hand", // Tattoo body part
+              tattooSize: "small", // Tattoo size
+              colorOrBlackGrey: "black", // Tattoo color or black/grey
+              coverUpOrRework: "coverup", // Cover-up or rework
+              preferredTattooer: "pqr", // Preferred tattooer
+              preferredLocation: "lakedown", // Preferred location
+              specificDates: "03-03-2025", // Specific dates
+              isTraveling: "no", // Is traveling
+              depositAmount: "20000", // Deposit amount
+              totalProjectCost: "50000", // Total project cost
+              sessionNo: 2, // Session number
+            }]
+          // Flatten the array of sessions
 
           setEvents(mappedUpcomingAppointments);
           setFilteredEvents(mappedUpcomingAppointments); // Update the filtered events with the mapped appointments
@@ -305,9 +351,9 @@ const CustomCalendar = ({ showTable, setShowTable }) => {
           <h4>Artists</h4>
 
           <ul>
-            {Array.from(new Set(masterEvents.map(event => event?.artist))) // Ensure unique names from master data
+            {Array.from(new Set(masterEvents.map(event => event?.artist))) 
               .map((name, index) => {
-                const artistId = artistIds[name]; // Get the correct artistId for each name
+                const artistId = artistIds[name];
                 return (
                   <li
                     className="artistName"
@@ -344,17 +390,16 @@ const CustomCalendar = ({ showTable, setShowTable }) => {
 
           //  <EventRenderer {...props} selectedNames={selectedNames} handleEventClick={handleEventClick}/>,
           components={{
-            // event: eventRenderer,
-            event: (props) => {
-              console.log("Event props:", props);  // This will log the props passed to the event
-              return (
-                <EventRenderer
-                  {...props}
-                  selectedNames={selectedNames}
-                  handleEventClick={handleEventClick}
-                />
-              );
-            },
+            event: eventRenderer,
+            // event: (props) => { 
+            //   return (
+            //     <EventRenderer
+            //       {...props}
+            //       selectedNames={selectedNames}
+            //       handleEventClick={handleEventClick}
+            //     />
+            //   );
+            // },
             
             toolbar: (props) => (
               <CustomToolbar

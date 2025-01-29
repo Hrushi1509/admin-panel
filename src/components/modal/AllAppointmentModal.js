@@ -8,6 +8,28 @@ const AllAppointmentModal = ({ completedAppointments, upcomingAppointments, onCl
 
     console.log(appointments, 'upcoming appt')
 
+    const handleCheckboxChange = async (sessionId, checked) => {
+        if (checked) {
+            try {
+                const response = await fetch('https://apptbackend.cercus.app/mark-appointmentsession-status-closed/', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ session_id: sessionId }),
+                });
+
+                if (response.ok) {
+                    console.log(`Session ${sessionId} marked as closed.`);
+                } else {
+                    console.error(`Failed to mark session ${sessionId} as closed.`);
+                }
+            } catch (error) {
+                console.error(`Error marking session ${sessionId} as closed:`, error);
+            }
+        }
+    };
+
     return (
         <div className="modal">
             <div className="modal-content">
@@ -43,31 +65,41 @@ const AllAppointmentModal = ({ completedAppointments, upcomingAppointments, onCl
                         <tbody>
                             {appointments.map((appointment, index) => (
                                 <tr key={index}>
-                                    <td>{appointment.session_date}</td>
-                                    <td>{appointment.appointment_title}</td>
+                                    <td>{appointment?.session_date}</td>
+                                    <td>{appointment?.appointment_title}</td>
                                     {/* <td>{appointment.appointment_location}</td> */}
 
                                     <td>
-                                        {appointment.appointment_location
-                                            ? appointment.appointment_location.name
+                                        {appointment?.appointment_location
+                                            ? appointment?.appointment_location?.name
                                             : 'Not provided'}
                                     </td>
-                                    <td>{appointment.tatto_idea}</td>
+                                    <td>{appointment?.tatto_idea}</td>
                                     <td>
-                                        {appointment.start_time} - {appointment.end_time}
-                                    </td>
-                                    <td>
-                                        <a
-                                            href={`https://app.cercus.app/v2/location/0rrNZinFkHbXD50u5nyq/contacts/detail/${appointment?.ghl_id}`}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="redirect-link"
-                                        >
-                                            🔗
-                                        </a>
+                                        {appointment?.start_time} - {appointment?.end_time}
                                     </td>
 
-                                    <td>checkbox</td>
+                                    <td>
+                                        {appointment?.ghl_id ? (
+                                            <a
+                                                href={`https://app.cercus.app/v2/location/0rrNZinFkHbXD50u5nyq/contacts/detail/${appointment.ghl_id}`}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="redirect-link"
+                                            >
+                                                🔗
+                                            </a>
+                                        ) : (
+                                            'null'
+                                        )}
+                                    </td>
+
+                                    <td>
+                                        <input
+                                            type="checkbox"
+                                            onChange={(e) => handleCheckboxChange(appointment?.session_id, e.target.checked)}
+                                        />
+                                    </td>
                                 </tr>
                             ))}
                         </tbody>
